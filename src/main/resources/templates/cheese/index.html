@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="${title}"></title>
+</head>
+<body>
+    <h1 th:text="${title}"></h1>
+
+<ul>
+    <li th:each = "cheese : ${cheeses}">
+        <h3 th:text="${cheese.key}"></h3>
+        <p th:text="${cheese.value}"></p>
+    </li>
+</ul>
+
+    <form action="/cheese/add" method="POST" >
+        <input type="text" name="name" />
+        <input type="text" name="description" />
+        <input type="submit" value="Add Some Cheese" />
+    </form>
+</body>
+</html>
